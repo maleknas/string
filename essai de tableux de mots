@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void main(){
+    //insertion du chaine :
+    char ch[100];
+    printf("entrer  votre chaine : ");
+    gets(ch);
+    //preparation de ch pour le comptage des mots :
+    ch[strlen(ch)]=' ';
+    printf("la chaine est : %s\n",ch);
+    //declaration de la matrice mat:
+    char mat[100][100][100][100];
+    //[1]:des mots,[2]:les lettres de la mots ,[3]: tailles des mots
+    //**********comptage des mots de ch :***************
+    //declaration des compteur
+    int k=0; //nombre de mots (+1)
+    //decoupages des mots :
+    for (int i = 0; i < strlen(ch); ++i) {
+        if(ch[i]==' ') {
+            for (int j = 0; j <= i; ++j) {
+                //itoa(k,mat[k]);
+                mat[k][j]=ch[j];
+
+            }
+            k++;
+            // effacage du mot ajoutee :
+            for (int j = i; j < strlen(ch); ++j) {
+                ch[j-i]=ch[j];
+            }
+
+        }
+    }
+    for (int i = 0; i < 3; ++i) {
+        printf("%s",mat[0][i]);
+    }
+    //comptage des mots
+    for (int i = 0; i < k; ++i) {
+        for (int j = 0; j < itoa(mat[i][][i]); ++j) {
+
+        }
+    }
+}
