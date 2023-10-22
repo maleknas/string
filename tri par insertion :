@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int tab[100];
+    int i, j, tmp;
+    int SIZE;
+    //donner la taille du tableau :
+    printf("donner la taille du tab : ");
+    scanf("%d", &SIZE);
+    //entrer un tableau :
+    for (int k = 0; k < SIZE; ++k) {
+        printf("entrer un nombre,n°%d : ",++i);
+        scanf("%d", &tab[k]);
+
+    }
+
+    // Afficher les éléments du tableau
+    printf("les elements du tableuax sont : ");
+    for (i = 0; i < SIZE; ++i) {
+        printf("%d , ", tab[i]);
+    }
+    printf("\n");
+    // Tri par insertion
+    for (i = 1; i < SIZE; i++) {
+        j = i;
+        while (j > 0 && tab[j - 1] > tab[j]) {
+            tmp = tab[j];
+            tab[j] = tab[j - 1];
+            tab[j - 1] = tmp;
+            j--;
+        }
+    }
+
+    printf("Tableau trie par ordre croissant :\n");
+    for (i = 0; i < SIZE; i++) {
+        printf("%d , ", tab[i]);
+    }
+
+}
